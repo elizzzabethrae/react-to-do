@@ -22,7 +22,7 @@ handleChange(e) {
   handleSubmit(e) {
     e.preventDefault();
     if (!this.state.newTodoDescription) { return }
-    const newTodo = { description: this.state.newTodoDescription, isCompleted: false };
+    const newTodo = { description: this.state.newTodoDescription, isCompleted: false, notDeleted: true};
     this.setState({ todos: [...this.state.todos, newTodo], newTodoDescription: '' });
    }
 
@@ -34,28 +34,15 @@ handleChange(e) {
   }
 
   deleteToDo(index) {
-    let todos = this.state.todos.filter(
-      const todo = todos[index];
-      function(todo) {
-        if todo.notDeleted = true{
-        return true;
-      }
-        else return false;
-      }
-    )
-    this.setState({ todos: todos });
+     const todoThatIWantToDelete = this.state.todos[index];
+     let filteredTodos = this.state.todos.filter( function(todo)  {
+       if (todo.notDeleted = true) {
+         return true;
+       }
+       else return false;
+     })
+    this.setState({todos : todoThatIWantToDelete}); //still not sure if that is right
   }
-
-  //deleteToDo(index) {
-    //if (!this.state.description) { return }
-//    const todos = { notDeleted = false};
-  //  this.setState({ todos: [...this.state.todos, newTodoDescription: '' });
-  //  let todos = this.state.todos.filter(
-    //deleteIt(todo) {
-      //if (notDeleted = true)
-        //return true;
-        //else return false;
-//    })
 
 
   render() {
