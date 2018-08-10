@@ -17,7 +17,6 @@ class App extends Component {
 
 handleChange(e) {
   const newState = {
-    newTodoDescription: e.target.value;
   }
   this.setState(newState)
 }
@@ -57,7 +56,7 @@ handleChange(e) {
               key={ index }
               description={ todo.description }
               isCompleted={ todo.isCompleted }
-              toggleComplete={ () => this.toggleComplete(index) } 
+              toggleComplete={ () => this.toggleComplete(index) }
               deleteToDo={ () => this.deleteToDo(index)}
             />
            )}
