@@ -16,8 +16,8 @@ class App extends Component {
 }
 
 handleChange(e) {
-  const newState = {
-    newTodoDescription: e.target.value;
+  let newState = {
+    newTodoDescription: e.target.value
   }
   this.setState(newState)
 }
@@ -44,7 +44,7 @@ handleChange(e) {
        // If it's not what we want to delete, keep it!
        return true;
      })
-    this.setState({todos : filteredTodos}); //still not sure if that is right
+    this.setState({todos : filteredTodos});
   }
 
 
@@ -57,7 +57,7 @@ handleChange(e) {
               key={ index }
               description={ todo.description }
               isCompleted={ todo.isCompleted }
-              toggleComplete={ () => this.toggleComplete(index) } 
+              toggleComplete={ () => this.toggleComplete(index) }
               deleteToDo={ () => this.deleteToDo(index)}
             />
            )}
